@@ -63,7 +63,13 @@ repeat_str(5, "Hello") # 印出 HelloHelloHelloHelloHello
 #==========================================>6
 # 找出離某個數字最近的平方數
 def nearest_sq(n)
-
+  sqrt_n = Math.sqrt(n).round
+  sqrt_n_addone = sqrt_n + 1
+  if (sqrt_n_addone**2-n).abs < (sqrt_n**2-n).abs
+    return sqrt_n_addone**2
+  else
+    return sqrt_n**2
+  end
 end
 
 puts nearest_sq(1)    # 1
